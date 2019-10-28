@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>CRUD app</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1>This is the Beer page</h1>
+            <a href="{% url 'index' %}">
+              <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </a>
+            <a href="{% url 'home' %}">
+              <button type="button" class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </a>
+
+            <div id="root">
+                <div class="beerName"></div>
+            </div>
+
+<script>
+    const request = new XMLHttpRequest();
+
+request.open('GET', 'https://api.openbrewerydb.org/breweries', true);
+
+request.onload = function () {
+    const data = JSON.parse(this.response);
+
+    if(request.status >= 200 && request.status < 400){
+        data.forEach(beer => {
+            const answer = beer.name;
+            console.log(answer);
+        })
+    } else {
+        console.log('error')
+    }
+};
+
+request.send();
+
+const app = document.getElementById('root');
+
+const container = document.createElement('div');
+container.setAttribute('class', 'beerName');
+
+app.appendChild(container);
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+</html>
