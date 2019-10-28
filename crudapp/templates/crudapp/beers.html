@@ -20,7 +20,8 @@
             </a>
 
             <div id="root">
-                <div class="beerName"></div>
+                <ul id="beerList">
+                </ul>
             </div>
 
 <script>
@@ -35,6 +36,11 @@ request.onload = function () {
         data.forEach(beer => {
             const answer = beer.name;
             console.log(answer);
+
+            const node = document.createElement('li');
+            const textnode = document.createTextNode(answer);
+            node.appendChild(textnode);
+            document.getElementById('beerList').appendChild(node);
         })
     } else {
         console.log('error')
@@ -42,13 +48,6 @@ request.onload = function () {
 };
 
 request.send();
-
-const app = document.getElementById('root');
-
-const container = document.createElement('div');
-container.setAttribute('class', 'beerName');
-
-app.appendChild(container);
 
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
