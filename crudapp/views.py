@@ -1,7 +1,17 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PostForm
 from .models import Post
 from django.views.generic import ListView, DetailView
+
+import requests
+
+
+def home(request):
+    return render(request, template_name='crudapp/home.html')
+
+def beer(request):
+    return render(request, template_name='crudapp/beers.html')
 
 class IndexView(ListView):
     template_name='crudapp/index.html'
@@ -9,7 +19,6 @@ class IndexView(ListView):
 
     def get_queryset(self):
         return Post.objects.all()
-
 
 class PostDetailView(DetailView):
     model = Post
@@ -31,8 +40,6 @@ def edit(request, pk, template_name='crudapp/edit.html'):
         form.save()
         return redirect('index')
     return render(request, template_name, {'form': form})
-
-
 
 def delete(request, pk, template_name='crudapp/confirm_delete.html'):
     post = get_object_or_404(Post, pk=pk)

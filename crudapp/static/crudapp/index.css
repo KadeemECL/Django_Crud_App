@@ -1,0 +1,16 @@
+.navStyle {
+    height: 80px;
+    box-shadow: 4px 4px 4px lightgrey;
+}
+
+.navButton{
+    background: transparent;
+    border: none;
+    line-height: 80px;
+}
+
+.navButton:focus{
+    outline: 0;
+    text-decoration: none;
+}
+
