@@ -1,7 +1,23 @@
 .navStyle {
     height: 80px;
-    box-shadow: 4px 4px 4px lightgrey;
+    box-shadow: 1px 2px 4px lightgrey;
     z-index: 99;
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+.navLinks{
+    font-size: 20px;
+}
+.navLinks a{
+    color: black;
+}
+.homeLink{
+    margin-left: 5%;
+}
+a.fright{
+    float:right;
+    margin-right: 5%;
 }
 
 .navButton{
@@ -17,9 +33,26 @@
 /*Header*/
 .headerBg{
     height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url("images/beerBg.jpg");
+    background-image:linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('images/beerBg.jpg');
+    background-position: center;
     margin-top: -20px;
+}
+
+.headerContent{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 10%;
+    color: white;
+}
+
+.headerContent h2{
+    font-size: 70px;
+    font-weight: 900;
+}
+
+/*Main Content*/
+iframe {
+    height: 680px !important;
+    width: 380px !important;
 }
 

@@ -4,9 +4,6 @@ from .forms import PostForm
 from .models import Post
 from django.views.generic import ListView, DetailView
 
-import requests
-
-
 def home(request):
     return render(request, template_name='crudapp/home.html')
 
