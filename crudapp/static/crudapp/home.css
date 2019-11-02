@@ -5,6 +5,7 @@
     position: fixed;
     width: 100%;
     background: white;
+    margin-top: 20px;
 }
 .navLinks{
     font-size: 20px;
@@ -55,4 +56,6 @@ iframe {
     height: 680px !important;
     width: 380px !important;
 }
+
+/*Index Page Style*/
 
