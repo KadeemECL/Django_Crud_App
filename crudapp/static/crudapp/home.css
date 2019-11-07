@@ -57,5 +57,21 @@ iframe {
     width: 380px !important;
 }
 
-/*Index Page Style*/
+.randomBeerButton{
+    border: solid black;
+    color: black;
+    background: transparent;
+}
 
+.randomBeerButton a{
+    color: black;
+}
+
+.randomBeerButton:hover{
+    background: transparent;
+}
+
+.randomBeerButton a:hover{
+    color: black;
+    text-decoration: none;
+}

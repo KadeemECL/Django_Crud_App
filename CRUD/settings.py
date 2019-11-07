@@ -1,4 +1,5 @@
 import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '207a-%g3@pw((x)wq__vd6o7gc+&3_4ijv*1r)dhifq_$bpynv')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -8,10 +9,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '207a-%g3@pw((x)wq__vd6o7gc+&3_4ijv*1r)dhifq_$bpynv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 

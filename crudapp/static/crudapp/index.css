@@ -30,3 +30,8 @@ a.fright{
     outline: 0;
     text-decoration: none;
 }
+
+/*Post Container*/
+.postContainer{
+    margin-top: 85px;
+}
